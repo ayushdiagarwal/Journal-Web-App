@@ -1,0 +1,134 @@
+
+	<style>
+		/*Sidebar*/
+
+		#SideBar{
+		 position: fixed;
+		 width: 245px;
+		 height: 100%;
+		 background: #151719;
+		 left: -245px;
+		 transition: all 500ms linear;
+		}
+		#SideBar.active{
+		 left:0px;
+		}
+		#SideBar ul li{
+		 color: rgba(230,230,230,0.9);
+		 list-style: none;
+		 padding: 15px 10px;
+		 border-bottom: 1px solid rgba(100,100,100,0.3);
+		}
+
+		#SideBar ul li a{
+		  text-decoration: none;
+		  color: white;
+		  display: block;
+		}
+
+		#SideBar ul{
+			margin: 0;
+			padding: 0;
+		}
+
+		li.first{
+		  margin-top: 60px;
+		  border-top: 1px solid rgba(100, 100, 100, 0.3);
+		  background: #258CD1;
+		}
+
+		.circle::before{
+		  position: absolute;
+		  /*content: "";*/
+	      height: 25px;
+		  width: 25px;
+		  background-color: white;
+		  border-radius: 50%;
+		  display: inline-block;
+		  margin-left: 82%;
+		}
+
+		i.fa-plus{
+			color: white;
+			margin-left: 60%;
+		}
+
+		#SideBar .toggle-btn{
+		 position: absolute;
+		 left: 253px;
+		 top: 30px;
+		 cursor: pointer;
+		}
+
+
+		.toggle-btn{
+		  cursor: pointer;
+		  width:20px;
+		  height:4px;
+		  background:white;
+		  position: relative;
+		  transition: all .4s;
+		}
+
+		.toggle-btn::after {
+		  content:"";
+		  position: absolute;
+		  background:white;
+		  width:20px;
+		  height:4px;
+		  top: 7px;
+		  transition: all .4s;
+		}
+
+		.toggle-btn::before {
+		  content:"";
+		  position: absolute;
+		  background:white;
+		  width:20px;
+		  height:4px;
+		  bottom: 7px;
+		  margin-left: 0;
+		  transition: all .4s;
+		}
+
+		.menu.active .toggle-btn::after {
+		  transform: rotateZ(55deg) translate(-8px, 0px);
+		  background:red;
+		}
+
+		.menu.active .toggle-btn::before {
+		  transform: rotateZ(-55deg) translate(-7px, 0px);
+		  background:red;
+		}
+
+		.menu.active .toggle-btn {
+		  background:transparent;
+		}
+	</style>
+<div id="what" class="SideBar">
+	<div id="SideBar">
+	<div class="menu">
+		  <div class="toggle-btn" onclick="toggleSideBar()">
+			  <script>
+			  const menu = document.querySelector(".menu");
+
+			  menu.addEventListener("click", () => {
+			  menu.classList.toggle("active");
+			})</script>
+		  </div>
+	</div>
+		  <ul>
+		   <li class="first link"><a href="{% url 'diary:entry-create' %}"><div class="circle"></div>New Entry<i class="fas fa-plus"></i></a></li>
+			{% for post in object_list %}
+			{% if post.author == user %}
+			<li><a href="{% url 'diary:entry-update' post.id %}" class="link">{{ post }}</a></li>
+			{% endif %}
+			{% endfor %}
+		  </ul>
+	  <script type="text/javascript">
+	  function toggleSideBar(){
+	   document.getElementById("SideBar").classList.toggle('active');
+	  }
+	 </script>
+	 </div>
+</div>

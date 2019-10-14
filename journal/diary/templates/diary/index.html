@@ -1,0 +1,36 @@
+{% extends 'diary/base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+
+{% load staticfiles %}
+<link rel= "stylesheet" type= "text/css" href = "{% static 'diary/index.css' %}">
+<div class="content">
+  <div class="jumbotron">
+    <h4>{{ user }}'s Joural</h4>
+    <p>{{ entries.count }} Entries | Created On {{ user.date_joined }} </p>
+    <form method="GET" action="" class="searcher form-group">
+      <input type="text" name="q" placeholder="Search Entries" value="{{ request.get.q }}" class="form-control search-txtb">
+    </form>
+  </div>
+  <div class="col-md-9">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Date</th>
+        <th scope="col">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in entries %}
+        <tr>
+          <td><a href="{% url 'diary:entry-update' entry.id %}">{{ entry.title }}</a></td>
+          <td><a href="{% url 'diary:entry-update' entry.id %}">{{ entry.date }}</a></td>
+          <td><a href="{% url 'diary:entry-update' entry.id %}">{{entry.author }}</a></td>
+        </tr>
+    </tbody>  
+    {% endfor %}
+  </table>
+  </div>
+</div>
+{% endblock content %}

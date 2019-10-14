@@ -1,0 +1,36 @@
+{% extends 'diary/base.html' %}
+{% load widget_tweaks %}
+{% block title %}Register{% endblock title %}
+{% block content %}
+
+{% load staticfiles %}
+<link rel= "stylesheet" type= "text/css" href = "{% static 'users/signup.css' %}">
+
+    <div id="login-box">
+        <div class="left-box">
+                <h1>Register</h1>
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    {% for non_field_error in form.non_field_errors %}
+                        <p>{{ non_field_error }}</p>
+                    {% endfor %}
+                    {% for field in form %}
+                        {% if field.html_name == "password1" %}
+                        {% render_field field class="txtb" placeholder="Password" %}
+                        {% elif field.html_name == "password2" %}
+                        {% render_field field class="txtb" placeholder="Confirm Password" %}
+                        {% else %}
+                        {% render_field field class="txtb" placeholder=field.html_name.capitalize %}
+                        {% endif %}
+                            {% for error in field.errors %}
+                                <small class="text-danger">{{ error }}</small>
+                        {% endfor %}
+                    {% endfor %}
+                    <input type="submit" value="Sign Up" name="signup-button" class="signup-btn">
+                </form>
+                <small class="text-muted ">Already Have An Account?<a href="{% url 'login' %}">Login</a></small>
+        </div>
+        <div class="right-box">
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,68 @@
+<script src="https://cdn.tiny.cloud/1/tqa92zf2lukln0ritoavtb2b9ospf6898jnd0senmv5ahfk9/tinymce/5/tinymce.min.js"></script>
+<style>
+	.main-box{
+  margin-right: 4%;
+  margin-left: 22%;
+  background: white;
+  box-shadow: 5px 2px 20px 6px #888888;
+}
+
+input.title{
+  font-size: 30px;
+  height: 50px;
+  width: 750px;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-bottom: 10px;
+  margin-left: 11px;
+  opacity: .7;
+}
+
+button.submit
+{
+  background-color: deepskyblue;
+  border-radius: 36px;
+}
+
+a.delete{
+  position: relative;
+  right: -200px;
+  color: red;
+}
+</style>
+	<div class="main-box">
+	<form action="" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{% load widget_tweaks %}
+		{% for field in form %}
+		<span><small>
+		{{ field.errors }}
+		</small></span>
+		<br>
+		{% if field.label == 'Content' %}
+		<span>{% render_field field class="content" id="content" %}</span>
+		{% elif field.label == 'Title' %}
+		<span>{% render_field field class="title" %}</span>
+		<a href="{% url 'diary:entry-delete' object.id %}" class="delete"><i class="fas fa-trash-alt fa-lg"></i></a>
+		{% else %}
+		<span>{{ field }}</span>
+		{% endif %}
+		{%  endfor %}
+		<br>
+		<button type="submit">Submit</button>
+	</form>
+	</div>
+	<script>tinymce.init({
+	selector:'textarea',
+	branding: false,
+	plugins: "autoresize",
+	  min_height: 500,
+	inline_boundaries: false,
+	setup: function (editor) {
+        editor.on('change', function (e) {
+            editor.save();
+        });
+    }
+	});
+	</script>

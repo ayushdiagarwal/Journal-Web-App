@@ -1,0 +1,13 @@
+{% extends 'diary/base.html' %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+	<h1>Diary Entry</h1>
+	{% for entry in entries%}
+<h1><a href="{% url 'diary:detail' entry.id %}">{{ entry.title }}-{{ entry.date }}-{{entry.author}}</a></h1>
+	{% endfor %}
+{% endblock content %}
+
+
+
+
+

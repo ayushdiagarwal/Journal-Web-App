@@ -1,0 +1,66 @@
+.content{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+
+td{
+	height: 20px;
+}
+
+td a{
+	color: black;
+	display: block; 
+	font-size: 15px;
+}
+
+td a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+.jumbotron{
+	margin: 0;
+	background: #E8E8E8;
+	height: 170px;
+}
+
+.jumbotron h4, p{
+	transform: translate(10%, -100%);
+}
+
+table
+{
+	transform: translateX(17%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

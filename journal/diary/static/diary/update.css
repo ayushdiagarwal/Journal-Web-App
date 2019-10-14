@@ -1,0 +1,40 @@
+.page{
+	padding: 0;
+	margin: 0;
+	background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+}
+
+.main-box{
+	margin-right: 4%;
+	margin-left: 22%;
+	background: white;
+	box-shadow: 5px 2px 20px 6px #888888;
+}
+
+input.title{
+	font-size: 30px;
+	height: 50px;
+	width: 750px;
+	background: transparent;
+	border: none;
+	outline: none;
+	margin-bottom: 10px;
+	margin-left: 11px;
+	opacity: .7;
+}
+
+button.submit
+{
+	background-color: deepskyblue;
+	border-radius: 36px;
+}
+
+.main-box a{
+  color: red;
+  background: blue;
+}
+
+a.delete:hover{
+  color: red;
+}
+    

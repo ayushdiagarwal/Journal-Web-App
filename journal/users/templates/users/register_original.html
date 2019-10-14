@@ -1,0 +1,16 @@
+{% extends 'diary/base.html' %}
+{% block title %}Register{% endblock title %}
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		<fieldset>
+			<legend>Join Today!</legend>
+			{{ form }}
+		</fieldset>
+		<button>Sign Up</button>
+	</form>
+	<small>
+		Already Have An Account?
+	</small>
+	<a href="{% url 'login' %}"> Sign In</a>
+{% endblock content %}
