@@ -14,6 +14,7 @@ from django.db.models import Q
 class index(LoginRequiredMixin, ListView):
     template_name = 'diary/index.html'
     context_object_name = 'entries'
+    paginate_by = 9
 
     def get_queryset(self):
         self.query = self.request.GET.get("q")
@@ -26,9 +27,11 @@ class index(LoginRequiredMixin, ListView):
             return Entry.objects.filter(author=self.request.user)
 
 
-class EntryCreate(LoginRequiredMixin, CreateView):
+class EntryCreate(LoginRequiredMixin, MultipleObjectMixin, CreateView):
     model = Entry
     fields = ['title', 'content']
+    template_name = 'diary/create.html'
+    object_list = Entry.objects.all()
 
     def form_valid(self, form):
         form.instance.author = self.request.user

@@ -30,6 +30,7 @@ a.delete{
   right: -200px;
   color: red;
 }
+
 </style>
 	<div class="main-box">
 	<form action="" method="post" enctype="multipart/form-data">
@@ -41,6 +42,7 @@ a.delete{
 		</small></span>
 		<br>
 		{% if field.label == 'Content' %}
+		<div class="hide"></div>
 		<span>{% render_field field class="content" id="content" %}</span>
 		{% elif field.label == 'Title' %}
 		<span>{% render_field field class="title" %}</span>

@@ -1,0 +1,12 @@
+{% extends 'diary/base.html' %}
+{% block title %}New Entry{% endblock title %}
+{% block content %}
+{% load staticfiles %}
+<div class="page">
+<link rel= "stylesheet" type= "text/css" href = "{% static 'diary/updatepage.css' %}">
+<!-- {% include 'diary/loader.html' %} -->
+	{% include 'diary/sidebar.html' %}
+	<br>
+	{% include 'diary/tiny_login.html' %}
+</div>
+{% endblock content %}

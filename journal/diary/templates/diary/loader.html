@@ -33,6 +33,7 @@ h1.text{
 .preload-finish{
 	opacity: 0;
 	pointer-events: none;
+	display: none;
 }
 
 
@@ -85,8 +86,15 @@ h1.text{
 	}
 }
 
-
 </style>
+
+<script>
+window.addEventListener("load", function () {
+    const loader = document.querySelector(".preload");
+    loader.className += "-finish"; 
+});
+</script>
+
 <div class="preload">
 	<div class="obj"></div>
 	<div class="obj"></div>
@@ -98,9 +106,3 @@ h1.text{
 	<div class="obj"></div>
 	<h1 class="text">Archlight</h1>
 </div>
-<script>
-	window.addEventListener("load", ()=>{
-		const preload  = document.querySelector(".preload");
-		preload.classList.add("preload-finish");
-	});
-</script>

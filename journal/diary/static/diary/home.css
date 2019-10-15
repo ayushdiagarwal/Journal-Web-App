@@ -23,7 +23,7 @@ td a:hover{
 .jumbotron{
 	margin: 0;
 	background: #E8E8E8;
-	height: 170px;
+	height: 190px;
 }
 
 .jumbotron h4, p{
@@ -35,7 +35,22 @@ table
 	transform: translateX(17%);
 }
 
+.searcher{
+	margin-left: 10%; 
+}
 
+.search-txtb{
+	width: 200px;
+}
+
+.pagination{
+	margin-top: 45px;
+	margin-left: 17%;
+}
+
+.pagination a{
+	margin-right: 4px;	
+}
 
 
 

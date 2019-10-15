@@ -4,33 +4,31 @@
 {% block content %}
 
 {% load staticfiles %}
-<link rel= "stylesheet" type= "text/css" href = "{% static 'users/signup.css' %}">
+<link rel= "stylesheet" type= "text/css" href = "{% static 'users/register.css' %}">
 
-    <div id="login-box">
-        <div class="left-box">
-                <h1>Register</h1>
+    <div class="login-div">
+      <div class="title">Archlight</div>
+      <div class="fields">
                 <form action="{% url 'register' %}" method="post">
                     {% csrf_token %}
                     {% for non_field_error in form.non_field_errors %}
                         <p>{{ non_field_error }}</p>
                     {% endfor %}
                     {% for field in form %}
-                        {% if field.html_name == "password1" %}
-                        {% render_field field class="txtb" placeholder="Password" %}
-                        {% elif field.html_name == "password2" %}
-                        {% render_field field class="txtb" placeholder="Confirm Password" %}
-                        {% else %}
-                        {% render_field field class="txtb" placeholder=field.html_name.capitalize %}
-                        {% endif %}
-                            {% for error in field.errors %}
-                                <small class="text-danger">{{ error }}</small>
+                        {% for error in field.errors %}
+                        <small class="text-danger">{{ error }}</small>
                         {% endfor %}
+                        {% if field.html_name == "password1" %}
+                        <div class="password">{% render_field field class="pass-input" placeholder="Password" %}</div>
+                        {% elif field.html_name == "password2" %}
+                        <div class="password">{% render_field field class="pass-input" placeholder="Confirm Password" %}</div>
+                        {% else %}
+                        <div class="username">{% render_field field class="user-input" placeholder=field.html_name.capitalize %}</div>
+                        {% endif %}
                     {% endfor %}
-                    <input type="submit" value="Sign Up" name="signup-button" class="signup-btn">
+                    <input type="submit" value="Sign Up" name="signup-button" class="signup-button">
                 </form>
-                <small class="text-muted ">Already Have An Account?<a href="{% url 'login' %}">Login</a></small>
-        </div>
-        <div class="right-box">
+                    <div class="link login"><a href="{% url 'login' %}">Already A Member?</a></div>
         </div>
     </div>
 {% endblock content %}
