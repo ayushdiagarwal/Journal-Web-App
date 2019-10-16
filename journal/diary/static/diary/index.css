@@ -4,22 +4,6 @@
 	overflow-x: hidden;
 }
 
-
-td{
-	height: 20px;
-}
-
-td a{
-	color: black;
-	display: block; 
-	font-size: 15px;
-}
-
-td a:hover{
-	color: black;
-	text-decoration: none;
-}
-
 .jumbotron{
 	margin: 0;
 	background: #E8E8E8;
@@ -28,11 +12,6 @@ td a:hover{
 
 .jumbotron h4, p{
 	transform: translate(10%, -100%);
-}
-
-table
-{
-	transform: translateX(17%);
 }
 
 .searcher{
@@ -44,9 +23,80 @@ table
 }
 
 .pagination{
-	margin-right: 20%;
+	margin-top: 45px;
+	margin-left: 17%;
 }
 
+.pagination a{
+	margin-right: 4px;	
+}
+
+.content-table {
+  border-collapse: collapse;
+  margin: 30px 100px;
+  font-size: 0.9em;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 150px;
+}
+
+.content-table td a{
+	display: block;
+	color: black;
+	font-size: 15px;
+}
+
+.content-table td{
+	max-width: 400px;	
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+td a{
+	
+}
+
+.content-table td a:hover{
+	color: black;
+	text-decoration: none;
+}
+
+.content-table {
+  display: table;
+}
+
+.content-table tr{
+  display: table-row;
+}
 
 
 

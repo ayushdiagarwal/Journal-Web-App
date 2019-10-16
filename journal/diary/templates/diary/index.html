@@ -3,32 +3,40 @@
 {% block content %}
 
 {% load staticfiles %}
-<link rel= "stylesheet" type= "text/css" href = "{% static 'diary/home.css' %}">
+<link rel= "stylesheet" type= "text/css" href = "{% static 'diary/index.css' %}">
 <div class="content">
   <div class="jumbotron">
     <h4>{{ user }}'s Joural</h4>
     <p>{{ entries.count }} Entries | Created On {{ user.date_joined }} </p>
     <form method="GET" action="" class="searcher form-group">
-      <input type="text" name="q" placeholder="Search Entries" value="{{ request.get.q }}" class="form-control search-txtb">
+      <input type="text" name="q" placeholder="Search Entries" value="{{ request.GET.q }}" class="form-control search-txtb">
     </form>
   </div>
-  <div class="col-md-9">
-  <table class="table table-hover">
+  <table class="content-table">
     <thead>
-      <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Date</th>
+      <tr class="row" data-href="{% url 'diary:entry-update' entry.id %}">
+        <th>No</th>
+        <th>Title</th>
+        <th>Date</th>
       </tr>
     </thead>
     <tbody>
       {% for entry in entries %}
-        <tr>
+        <tr class="row" data-href="{% url 'diary:entry-update' entry.id %}">
+          <th>{{ forloop.counter }}</th>
           <td><a href="{% url 'diary:entry-update' entry.id %}">{{ entry.title }}</a></td>
           <td><a href="{% url 'diary:entry-update' entry.id %}">{{ entry.date }}</a></td>
         </tr>
     {% endfor %}
     </tbody>  
   </table>
+<script>
+  jQuery(document).ready(function($) {
+    $(".row").click(function() {
+        window.location = $(this).data("href");
+    });
+});
+</script>
 <div class="pagination">
 {% if is_paginated %}
 
