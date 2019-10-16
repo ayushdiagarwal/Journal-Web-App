@@ -1,3 +1,156 @@
-body{
-    height: 20vh;
+
+body {
+  margin:0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background-image: url(images/image.jpg);
 }
+.login-div {
+  filter: blur(0.4px);
+  width:40px;
+  height: 600px;
+  padding: 60px 35px 35px 35px;
+  border-radius: 10px;
+  background-image: url(images/bg.png);
+  box-shadow:
+  /*bottom shadow*/
+  0px 20px 20px rgba(0,0,0,0.2),
+  0px 5px 10px rgba(0,0,0,0.2),
+  /*long bottom shadow*/
+  0px 70px 50px rgba(0,0,0,0.4),
+  /*right shadow*/
+  30px 50px 50px rgba(0,0,0,0.2),
+  /*left shadow*/
+  -30px 50px 50px rgba(0,0,0,0.2),
+  /*right inset*/
+  inset 20px 0px 60px rgba(0,0,0,0.1),
+  /*left inset*/
+  inset -20px 0px 60px rgba(0,0,0,0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  padding-top:24px;
+  letter-spacing: 0.5px;
+}
+
+.fields{
+  width: 100%;
+  padding: 180px 5px 30px 5px;
+}
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  padding: 10px 10px 10px 5px;
+  width: 90%;
+}
+.username, .password {
+  display: block;
+  border-bottom: 1px solid #b3b3b3;
+  margin-bottom: 15px;
+}
+::placeholder  { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+  font-size: 20px;
+  font-weight: 300;
+}
+::-ms-input-placeholder
+ { /* Microsoft Edge */
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+input.signin-button {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 60px;
+  width: 60%;
+  height: 45px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+  background: radial-gradient(circle, #24cfaa, #26c5a3, #28bb9c, #29b294, #2aa88d);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.signin-button:hover {
+  background: radial-gradient(circle, #2fdbb6, #32d6b3, #32c9a8, #36c7a7, #38bb9f);
+}
+.signin-button:active {
+  background: radial-gradient(circle, #1da88a, #1ea084, #229c82, #23947b, #238d76);
+}
+.link {
+  padding-top: 20px;
+  text-align: center;
+}
+.link a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.fields svg {
+  height: 22px;
+  margin-bottom: -3px;
+  margin-right: 10px;
+}
+
+small.error{
+  color: red; 
+}
+
+.register{
+  margin-top: -8px;
+}
+
+@-webkit-keyframes autofill {
+    to {
+        color: white;
+        background: transparent;
+    }
+}
+
+.pass-input, .user-input:-webkit-autofill {
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

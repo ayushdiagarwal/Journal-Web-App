@@ -1,123 +1,143 @@
-body
-{
-    margin: 0;
-    padding: 0;
-    font-size: 16px;
-    color: #777;
-    font-family: sans-serif;
-    font-weight: 300;
-    background-image: url(images/image.jpg);
-    background-size: cover;
-    background-position: center;
+body {
+  margin:0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  background-image: url(images/image.jpg);
+}
+.login-div {
+  filter: blur(0.4px);
+  width:400px;
+  height: 600px;
+  padding: 60px 35px 35px 35px;
+  border-radius: 10px;
+  background-image: url(images/bg.png);
+  box-shadow:
+  /*bottom shadow*/
+  0px 20px 20px rgba(0,0,0,0.2),
+  0px 5px 10px rgba(0,0,0,0.2),
+  /*long bottom shadow*/
+  0px 70px 50px rgba(0,0,0,0.4),
+  /*right shadow*/
+  30px 50px 50px rgba(0,0,0,0.2),
+  /*left shadow*/
+  -30px 50px 50px rgba(0,0,0,0.2),
+  /*right inset*/
+  inset 20px 0px 60px rgba(0,0,0,0.1),
+  /*left inset*/
+  inset -20px 0px 60px rgba(0,0,0,0.1);
 }
 
-#login-box
-{
-    position: relative;
-    height: 430px;
-    width: 630px;
-    background: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
-    transform: translate(58%, 25%);
+.title {
+  text-align: center;
+  font-size: 28px;
+  padding-top:24px;
+  letter-spacing: 0.5px;
 }
 
-.left-box
-{
+.fields{
+  width: 100%;
+  padding: 110px 5px 30px 5px;
+}
+.fields input {
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 18px;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  padding: 10px 10px 10px 5px;
+  width: 98%;
+  width: 97%;
+}
+.username, .password {
+  display: block;
+  border-bottom: 1px solid #b3b3b3;
+  margin-bottom: 15px;
+}
+::placeholder  { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+  font-size: 20px;
+  font-weight: 300;
+}
+::-ms-input-placeholder
+ { /* Microsoft Edge */
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+}
+input.signup-button {
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 60px;
+  width: 60%;
+  height: 45px;
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+  letter-spacing: 1px;
+  background: radial-gradient(circle, #24cfaa, #26c5a3, #28bb9c, #29b294, #2aa88d);
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.signup-button:hover {
+  background: radial-gradient(circle, #2fdbb6, #32d6b3, #32c9a8, #36c7a7, #38bb9f);
+}
+.signup-button:active {
+  background: radial-gradient(circle, #1da88a, #1ea084, #229c82, #23947b, #238d76);
+}
+.link {
+  padding-top: 20px;
+  text-align: center;
+}
+.link a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+.fields svg {
+  height: 22px;
+  margin-bottom: -3px;
+  margin-right: 10px;
+}
+
+.login{
+  margin-top: -8px;
+}
+
+small.error{
     position: absolute;
-    top: 0;
-    right: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 300px;
-    height: 430px;
+    color: red;
+    margin-bottom: 100%;
 }
 
-h1
-{
-    margin: -10px 0 20px 0;
-    font-weight: 300;
-    font-size: 28px;
+.up{
+  margin-top: 15px;
 }
 
-input.txtb
-{
-    display: block;
-    box-sizing: border-box;
-    margin-bottom: 26px;
-    padding: 4px;
-    width: 220px;
-    height: 34px;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #aaa;
-    font-family: sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    transition: 0.2s ease;
+.down{
+  margin-bottom: 5px;
 }
 
-
-input[type="submit"]:hover,
-input[type="submit"]:focus
-{
-  transform: scale(1.04);
-}
-
-.right-box
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    box-sizing: border-box;
-    padding: 40px;
-    width: 315px;
-    height: 430px;
-    background-image: url(images/bg.png);
-    background-size: cover;
-    background-position: center;
-}
-
-
-small a
-{
-    margin-left: 4px; 
-}
-
-
-small a:hover
-{
-    text-decoration: none;
+.bit-up{
 }
 
 @-webkit-keyframes autofill {
     to {
-        color: black;
+        color: white;
         background: transparent;
     }
 }
 
-.txtb:-webkit-autofill {
+.pass-input, .user-input:-webkit-autofill {
     -webkit-animation-name: autofill;
     -webkit-animation-fill-mode: both;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

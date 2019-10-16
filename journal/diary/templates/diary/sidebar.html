@@ -121,7 +121,7 @@
 		   <li class="first link"><a href="{% url 'diary:entry-create' %}"><div class="circle"></div>New Entry<i class="fas fa-plus"></i></a></li>
 			{% for post in object_list %}
 			{% if post.author == user %}
-			<li><a href="{% url 'diary:entry-update' post.id %}" class="link">{{ post }}</a></li>
+			<li><a href="{% url 'diary:entry-update' post.id %}" class="link">{{ post }}<br><small class="text-muted">{{ post.date }}</small></a></li>
 			{% endif %}
 			{% endfor %}
 		  </ul>

@@ -12,16 +12,18 @@
                 <form action="{% url 'register' %}" method="post">
                     {% csrf_token %}
                     {% for non_field_error in form.non_field_errors %}
-                        <p>{{ non_field_error }}</p>
+                        <small class="error">{{ non_field_error }}</small>
                     {% endfor %}
                     {% for field in form %}
-                        {% for error in field.errors %}
-                        <small class="text-danger">{{ error }}</small>
-                        {% endfor %}
+                    {% for error in field.errors %}
+                    <small class="error">{{ error }}</small>
+                    {% endfor %}
                         {% if field.html_name == "password1" %}
-                        <div class="password">{% render_field field class="pass-input" placeholder="Password" %}</div>
+                        <div class="password down">{% render_field field class="pass-input" placeholder="Password" %}</div>
                         {% elif field.html_name == "password2" %}
-                        <div class="password">{% render_field field class="pass-input" placeholder="Confirm Password" %}</div>
+                        <div class="password up">{% render_field field class="pass-input" placeholder="Confirm Password" %}</div>
+                        {% elif field.html_name == "username" %}
+                        <div class="username bit-up">{%  render_field field class="user-input" placeholder=field.html_name.capitalize %}</div>
                         {% else %}
                         <div class="username">{% render_field field class="user-input" placeholder=field.html_name.capitalize %}</div>
                         {% endif %}

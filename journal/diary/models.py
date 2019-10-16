@@ -8,7 +8,8 @@ class Entry(models.Model):
     title = models.CharField(max_length=50, default=timezone.now)
     date = models.DateTimeField(default=timezone.now)
     content = models.TextField()
-    author = models.ForeignKey(User, on_delete=models.CASCADE, default='Unknown')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, default='Unknown')
 
     def get_absolute_url(self):
         return reverse('diary:index')

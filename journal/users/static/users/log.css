@@ -110,7 +110,10 @@ input.signin-button {
 }
 
 small.error{
-  color: red;
+  position: absolute;
+  color: red; 
+  top: 43%;
+  font-size: 15px;
 }
 
 .register{
