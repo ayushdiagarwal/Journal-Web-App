@@ -4,22 +4,6 @@
 	overflow-x: hidden;
 }
 
-
-td{
-	height: 20px;
-}
-
-td a{
-	color: black;
-	display: block; 
-	font-size: 15px;
-}
-
-td a:hover{
-	color: black;
-	text-decoration: none;
-}
-
 .jumbotron{
 	margin: 0;
 	background: #E8E8E8;
@@ -28,11 +12,6 @@ td a:hover{
 
 .jumbotron h4, p{
 	transform: translate(10%, -100%);
-}
-
-table
-{
-	transform: translateX(30%);
 }
 
 .searcher{
@@ -52,12 +31,34 @@ table
 	margin-right: 4px;	
 }
 
+/*Table*/
+
+table{
+  border-collapse: collapse;
+  margin: 30px 180px;
+  margin-left: 190px;
+  font-size: 0.9em;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-spacing: 0;
+  width: 80%;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
 
 
+td a, th a{
+	padding-right: 220px;
+	display: block;
+	color: black;
+	clear: both;
+}
 
-
-
-
+td a:hover, th a:hover{
+	text-decoration: none;
+	color: black;
+}
 
 
 

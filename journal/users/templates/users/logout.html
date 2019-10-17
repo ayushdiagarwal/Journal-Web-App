@@ -1,7 +1,14 @@
 {% extends 'diary/base.html' %}
-{% block title %}Logged Out{% endblock title %}
+{% block title %}Entry{% endblock %}
 {% block content %}
-<h2>You've been Logged Out</h2>
-<br>
-<a href="{% url 'login' %}"> Log In Again</a>
-{% endblock content %}
+	<div class = "container">
+		<br>
+		<br>
+		<h2>You've Been Logged Out</h2>
+			<div class="border-top py-3">
+					 <a class="ml-2" href = "{% url 'login' %}" style="text-decoration: none;">Log In Again</a>
+			</div>
+		</div>   
+	</div>
+
+{% endblock content%}

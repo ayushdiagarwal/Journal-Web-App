@@ -1,13 +1,21 @@
 {% extends 'diary/base.html' %}
 {% block title %}Delete Entry{% endblock title %}
 {% block content %}
-	<h1>Delete Entry</h1>
-	<form action="" method="post" enctype="multipart/form-data">
-		{% csrf_token %}
-		<h2>Are You Sure You Wanna Delete The Entry: "{{ entry.title }}"</h2>
-		{% include 'diary/form-template.html' %}
-		<br>
-		<button type="submit">Delete</button>
-		<a href="{% url 'diary:entry-update' entry.id %}">Cancel</a>
-	</form>
+<div class = "container">
+	<div class="content-section py-5">
+		<form method="POST">
+			{% csrf_token %}
+			<fieldset class="form-group">
+				<legend class="border-bottom mb-4">
+					Delete Entry
+				</legend>
+			</fieldset>
+			<h2>You Sure You Wanna Delete The Post '{{ entry }}'</h2>
+			<div class="form-group">
+				<button class="btn btn-outline-danger" type = "submit">Yes, Delete Post</button>
+				<button class="btn btn-outline-success" href="{% url 'diary:entry-update' entry.id %}">Cancel</button>
+			</div>
+		</form>
+	</div>   
+</div>
 {% endblock content %}
