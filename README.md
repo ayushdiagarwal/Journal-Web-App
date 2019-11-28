@@ -9,4 +9,4 @@
 4. Open The 'website' folder
 5. In 'website' folder Open the terminal and type 'python manage.py runserver'
 6. Open your web browser and type in 'localhost:8000' or 'http://127.0.0.1:8000'
-7. The Web-App will be opened and you use it now.
+7. The Web-App will be opened and now you can use it now.
