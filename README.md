@@ -1,6 +1,5 @@
-# Entry Management Software Assignment
-
-# This Web-App Is Live At https://dianant.herokuapp.com/
+# Archlight - Journal
+# This Web-App Is Live At https://archlight.herokuapp.com/
 
 ## Steps To Use This Web-App On Your Own Computer
 1. Install Python on your computer
