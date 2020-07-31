@@ -9,10 +9,6 @@ This website is an online journal tool.
 
 ![Archlight Demo](demo.gif)
 
-## Contents
-* [Installation](https://github.com/diayush/Journal-Web-App/#Installation)
-* [Usuage](https://github.com/diayush/Journal-Web-App/#Usuage)
-
 ## Installation
 * Install Python from [here](https://www.python.org/downloads/)
 * Install Git From [here](https://git-scm.com/) or simply download the zip file from above and unzip it.
