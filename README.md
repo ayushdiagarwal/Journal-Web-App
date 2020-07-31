@@ -3,7 +3,11 @@
 ## Introduction
 This website is an online journal tool.
 
-## This Website is live at [https://archlight.herokuapp.com/](https://archlight.herokuapp.com/)
+### This Website is live at [https://archlight.herokuapp.com/](https://archlight.herokuapp.com/)
+
+## Demo 
+
+![Archlight Demo](demo.gif)
 
 ## Contents
 * [Installation](https://github.com/diayush/Journal-Web-App/#Installation)
